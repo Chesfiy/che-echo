@@ -10,7 +10,7 @@ export const getMany = query({
     },
 });
 
-export const ad = mutation({
+export const add = mutation({
     args: {
     },
     handler: async (ctx, args) => {
@@ -26,6 +26,8 @@ export const ad = mutation({
         if(!orgId) {
             throw new Error("Missing organization");
         }
+
+        throw new Error("Tracking error test");
 
         const userId = await ctx.db.insert("users", { name: "Frank" });
 
